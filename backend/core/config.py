@@ -9,6 +9,8 @@ class Settings(BaseSettings):
     pinecone_api_key: str | None = None
     pinecone_index: str | None = None
     pinecone_env: str | None = None
+    database_url: str | None = None
+    redis_url: str | None = None
 
 
 settings = Settings()
