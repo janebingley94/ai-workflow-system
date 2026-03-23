@@ -1,8 +1,12 @@
+"use client";
+
+import { useParams } from "next/navigation";
+
+import { WorkflowEditor } from "@/components/workflow/WorkflowEditor";
+
 export default function EditWorkflowPage() {
-  return (
-    <main className="space-y-3">
-      <h1 className="text-2xl font-semibold">Edit Workflow</h1>
-      <p className="text-slate-400">Placeholder for workflow editor.</p>
-    </main>
-  );
+  const params = useParams();
+  const id = Array.isArray(params?.id) ? params.id[0] : (params?.id as string | undefined);
+
+  return <WorkflowEditor mode="edit" workflowId={id} />;
 }
